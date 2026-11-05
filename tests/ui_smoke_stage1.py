@@ -13,7 +13,9 @@ def html_inline():
     html=(ROOT/'index.html').read_text(encoding='utf-8')
     def inject_js(m):
         path=ROOT/m.group(1).split('?')[0]
-        return '<script>\n'+path.read_text(encoding='utf-8')+'\n</script>' if path.exists() else m.group(0)
+        if not path.is_file():
+            raise FileNotFoundError(f'Required frontend JavaScript is missing: {path}')
+        return '<script>\n'+path.read_text(encoding='utf-8')+'\n</script>'
     def inject_css(m):
         path=ROOT/m.group(1).split('?')[0]
         return '<style>\n'+path.read_text(encoding='utf-8')+'\n</style>' if path.exists() else m.group(0)
@@ -33,21 +35,10 @@ async def main():
             dialogs.append(d.message)
             await d.accept()
         page.on('dialog',handle_dialog)
-        # Logout before login
-        await page.locator('#ilPreferences > summary').click()
-        await page.locator('#logoutBtn').click()
-        await page.locator('#loginOverlay').wait_for(state='visible')
-        assert await page.locator('#loginOverlay').is_visible()
-        assert await page.locator('body').evaluate(
-        "(el) => el.classList.contains('login-locked')"
-        )
-        print('OK: logout == True')
-
-        assert not errors,errors
         await page.set_content(html_inline(),wait_until='domcontentloaded')
-        assert await page.locator('#loginOverlay').is_visible()
-        await page.click('#loginDemo')
-        assert not await page.locator('#loginOverlay').is_visible()
+        await page.locator('#loginOverlay').wait_for(state='visible', timeout=10000)
+        await page.locator('#loginDemo').click()
+        await page.locator('#loginOverlay').wait_for(state='hidden', timeout=10000)
         assert (await page.locator('#welcomeName').inner_text()).strip()=='User'
         print('OK: mock login')
         await page.set_input_files('#file',str(SAMPLE))
@@ -141,6 +132,31 @@ async def main():
         cleared=await page.evaluate('({rows:data.length,source:InsightLabIntegrity.getDataset().source})')
         assert cleared['rows']==0 and cleared['source']=='empty',cleared
         print('OK: reset clears rows and identifies a new empty dataset')
+        # Logout must work whether session controls are inside Preferences or
+        # directly available in the header (different frontend revisions).
+        preferences = page.locator('#ilPreferences')
+        if await preferences.count() and await preferences.is_visible():
+            summary = preferences.locator('summary')
+            await summary.click(timeout=10000)
+        else:
+            print('INFO: Preferences menu unavailable; checking direct logout')
+
+        logout = page.locator('#logoutBtn')
+        try:
+            await logout.wait_for(state='visible', timeout=10000)
+            await logout.click(timeout=10000)
+        except Exception as exc:
+            raise AssertionError(
+                'Logout button is not accessible. Check whether '
+                'product-ui-v10.js loaded and inspect the browser errors: '
+                f'{errors}'
+            ) from exc
+
+        await page.locator('#loginOverlay').wait_for(state='visible', timeout=10000)
+        assert await page.locator('body').evaluate(
+            "(el) => el.classList.contains('login-locked')"
+        ), 'Logout did not restore login-locked state'
+        print('OK: logout returns to the login screen')
         assert not errors,errors
         print('PASS: browser console has no uncaught JavaScript errors')
         await browser.close()
