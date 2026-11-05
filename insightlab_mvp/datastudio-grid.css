@@ -1,0 +1,16 @@
+/* Data Studio – editable spreadsheet */
+.ds-grid-heading,.ds-grid-footer{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+.ds-grid-heading h3{margin:0 0 5px}.ds-grid-heading p,.ds-grid-help{margin:0 0 15px;color:var(--muted);font-size:.84rem}
+.ds-grid-tools{display:flex;flex-wrap:wrap;align-items:end;gap:12px;margin:18px 0}
+.ds-grid-tools label{display:grid;gap:6px;min-width:135px;color:var(--muted);font-size:.78rem}
+.ds-grid-tools input,.ds-grid-tools select{min-height:42px;padding:9px 10px;border:1px solid var(--line);border-radius:12px;background:var(--panel-strong);color:var(--text);max-width:250px}
+.ds-grid-tools #dsSearch{min-width:205px}
+.ds-sheet-scroll{overflow:auto;max-height:65vh;border:1px solid var(--line);border-radius:15px}
+.ds-sheet{width:100%;min-width:850px;border-collapse:separate;border-spacing:0}
+.ds-sheet th{position:sticky;top:0;background:var(--panel-strong);z-index:1;cursor:pointer}
+.ds-sheet td{padding:5px 8px}
+.ds-sheet tr:hover td{background:rgba(128,87,227,.08)}
+.ds-sheet td input,.ds-sheet td select{width:100%;min-width:100px;min-height:34px;background:transparent;color:var(--text);border:1px solid transparent;border-radius:7px;padding:6px}
+.ds-sheet td input:focus,.ds-sheet td select:focus{border-color:var(--accent);background:var(--panel-strong);outline:none}
+.ds-grid-footer{margin-top:14px}.ds-grid-footer>div{display:flex;gap:8px}
+@media(max-width:650px){.ds-grid-tools label{flex:1 1 140px}.ds-grid-tools .btn{flex:1}.ds-grid-heading{display:block}}

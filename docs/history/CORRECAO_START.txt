@@ -1,0 +1,3 @@
+InsightLab v5.3 - correcao de sintaxe no start.bat.
+O comando echo dentro de IF nao deve conter parenteses nao escapados.
+Execute start.bat a partir da pasta insightlab_langchain.

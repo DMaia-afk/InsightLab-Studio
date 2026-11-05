@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "dashboards": [
+    {
+      "id": "dashboard-example",
+      "name": "Análise operacional",
+      "description": "Exemplo estrutural: substitua pelos dados e IDs reais",
+      "widgets": [
+        {
+          "id": "widget-revenue",
+          "type": "line",
+          "title": "Evolução mensal",
+          "metric": "sum",
+          "field": "amount",
+          "dimension": "month",
+          "width": 12
+        }
+      ],
+      "slides": [
+        {
+          "id": "slide-trend",
+          "title": "Comportamento mensal",
+          "widgetRefs": [
+            {
+              "widgetId": "widget-revenue",
+              "datasetKey": "insightlab_demo_v1",
+              "capturedAt": "2026-11-03T00:00:00.000Z",
+              "binding": "snapshot",
+              "filters": {
+                "from": "2026-01-01",
+                "to": "2026-10-31",
+                "store": ""
+              },
+              "widgetState": {
+                "type": "line",
+                "field": "amount",
+                "metric": "sum",
+                "dimension": "month",
+                "title": "Evolução mensal"
+              }
+            }
+          ],
+          "overlays": [
+            {
+              "id": "note-example",
+              "type": "note",
+              "text": "Interprete a tendência considerando sazonalidade e qualidade dos registros.",
+              "x": 8,
+              "y": 73,
+              "w": 42,
+              "h": 14
+            }
+          ],
+          "narrative": {
+            "text": "",
+            "source": "local"
+          },
+          "highlight": true
+        }
+      ]
+    }
+  ]
+}

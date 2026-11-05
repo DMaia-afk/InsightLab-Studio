@@ -1,0 +1,5 @@
+date,amount,store,category,status
+2026-10-01T09:00,350,Unidade Norte,Serviços,COMPLETED
+2026-10-02T11:00,510,Digital,Tecnologia,COMPLETED
+2026-10-03T16:00,120,Unidade Sul,Assinaturas,CANCELLED
+2026-10-04T14:00,700,Digital,Consultoria,COMPLETED

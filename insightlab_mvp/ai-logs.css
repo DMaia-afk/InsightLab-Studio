@@ -1,0 +1,3 @@
+
+.il-log-panel{margin-top:20px;padding:16px;border:1px solid var(--line,#555);border-radius:16px;background:var(--panel,#141421)}.il-log-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.il-log-summary{display:flex;gap:16px;flex-wrap:wrap;margin:15px 0;color:var(--muted,#aaa)}.il-log-list{max-height:300px;overflow:auto;font-size:.82rem}.il-log-row{display:grid;grid-template-columns:130px 1fr 95px;gap:12px;padding:9px;border-bottom:1px solid var(--line,#444)}.il-log-ok{color:#8FD84A}.il-log-error{color:#F9D354}.il-log-panel .btn{margin:3px}.il-log-note{font-size:.8rem;color:var(--muted,#aaa)}
+@media(max-width:680px){.il-log-row{grid-template-columns:1fr;gap:2px}}

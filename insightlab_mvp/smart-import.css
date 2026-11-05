@@ -1,0 +1,7 @@
+
+.smart-import-layer[hidden]{display:none!important}.smart-import-layer{position:fixed;inset:0;z-index:110;display:grid;place-items:center;background:rgba(0,0,0,.72);backdrop-filter:blur(9px);padding:15px}
+.smart-import-dialog{width:min(1000px,100%);max-height:94vh;overflow:auto;background:var(--panel-strong,#141521);color:var(--text,#fff);border:1px solid var(--line,#555);border-radius:22px;padding:22px;box-shadow:0 25px 90px #0008}
+.smart-import-dialog h2{margin:4px 0 7px}.smart-import-dialog p{color:var(--muted,#bbb);line-height:1.5}.smart-import-controls{display:flex;gap:14px;flex-wrap:wrap;margin:16px 0}.smart-import-controls label{display:flex;align-items:center;gap:7px;cursor:pointer}
+.smart-import-table{width:100%;min-width:700px;border-collapse:collapse}.smart-import-table td,.smart-import-table th{padding:8px;border-bottom:1px solid var(--line,#333);text-align:left}.smart-import-table select,.smart-import-table input{max-width:180px;background:var(--panel,#272637);color:var(--text,#fff);border:1px solid var(--line,#666);border-radius:9px;padding:8px}
+.smart-import-table select{min-width:130px}.smart-import-table .example{font-size:.8rem;color:var(--muted,#aaa);max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.smart-import-actions{display:flex;justify-content:flex-end;gap:12px;position:sticky;bottom:0;padding-top:14px;background:var(--panel-strong,#141521)}
+.smart-import-alert{color:var(--accent3,#F9D354);font-size:.85rem;margin:10px 0}.smart-import-table-wrap{overflow:auto;max-height:48vh}

@@ -1,0 +1,6 @@
+/* Visual source-binding warning — never display misleading metrics from a different CSV. */
+#ilDataBindingBanner[hidden]{display:none!important}
+#ilDataBindingBanner:not([hidden]){display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:#f8eddb;color:#463d2e;border:1px solid #d7c39b;border-radius:10px;padding:12px 16px;margin:12px 0 16px;font-size:.87rem;line-height:1.5}
+#ilDataBindingBanner .btn{white-space:nowrap;background:#fff;color:#26363b;border:1px solid #aab1b2}
+.il-binding-warning{font-size:.88rem;line-height:1.6}
+@media(max-width:720px){#ilDataBindingBanner:not([hidden]){align-items:stretch;flex-direction:column}#ilDataBindingBanner .btn{width:100%}}

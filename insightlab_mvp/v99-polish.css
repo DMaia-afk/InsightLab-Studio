@@ -1,0 +1,15 @@
+/* InsightLab v9.9 - layout and theme polish */
+#aiPlanner,.workspace-agent,#workspaceAgent{display:none!important}
+#ilSavedProjects{display:flex;flex-direction:column;gap:8px;width:100%;margin-top:8px}
+#ilRecentProjects{width:100%;min-width:0}
+.il-project{display:flex;align-items:center;gap:6px;width:100%;min-width:0;padding:5px;border:1px solid var(--line,rgba(255,255,255,.1));background:rgba(128,87,227,.055);border-radius:13px}
+.il-project-open{min-width:0;display:flex!important;align-items:center!important;gap:9px!important;flex:1;text-align:left;background:transparent!important;color:var(--text)!important;padding:7px!important;border:0!important;box-shadow:none!important}
+.il-project-symbol{display:grid;place-items:center;flex:0 0 30px;height:30px;background:rgba(128,87,227,.18);border-radius:9px;font-size:17px}
+.il-project-meta{min-width:0;display:flex;flex-direction:column;gap:3px}.il-project-meta strong{font-size:12px!important;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:173px}.il-project-meta small{color:var(--muted);font-size:10px}
+.il-project-delete{flex:0 0 26px;min-width:26px;width:26px;height:28px;padding:0!important;display:grid;place-items:center;border-radius:8px;background:transparent;color:var(--muted);border:0;font-size:17px}.il-project-delete:hover{background:rgba(225,76,90,.15);color:#e65b69}
+#ilNewPresentation{width:100%;display:flex;justify-content:center!important;margin-top:9px;border:1px dashed var(--line)!important;font-size:12px}
+[data-theme="light"]{--ds-bg:#e6e4df!important;--ds-surface:#f5f2ec!important;--ds-surface-2:#ebe8e1!important;--ds-elevated:#deddd8!important;--bg:#e6e4df!important;--panel:#f5f2ec!important;--panel-strong:#ebe8e1!important}
+[data-theme="light"] body{background:linear-gradient(135deg,#e4e2dd,#eae8e3 50%,#dedfdc)!important}
+[data-theme="light"] .sidebar,[data-theme="light"] .top,[data-theme="light"] .hud-board,[data-theme="light"] .hud-panel,[data-theme="light"] .card,[data-theme="light"] .builder-panel,[data-theme="light"] .builder-canvas,[data-theme="light"] .hud-assistant,[data-theme="light"] .ai-settings{background:#f5f2ec!important;border-color:#dad6cc!important}
+[data-theme="light"] .hud-hero{background:linear-gradient(120deg,#f0ede7,#e1e2df)!important}
+[data-theme="light"] .il-project{background:#eeeae3!important;border-color:#d5d1c8!important}

@@ -1,0 +1,18 @@
+
+/* Conversational analytics drawer */
+.il-chat-launch{position:fixed;right:22px;bottom:22px;z-index:90;border:1px solid rgba(198,162,255,.4);border-radius:50%;height:64px;width:64px;display:grid;place-items:center;background:linear-gradient(145deg,#8057E3,#5B39AC);box-shadow:0 14px 36px rgba(128,87,227,.35);cursor:pointer;transition:transform .2s}
+.il-chat-launch:hover{transform:translateY(-3px)}.il-chat-launch img{width:30px;height:30px;filter:brightness(0) invert(1)}
+.il-chat-window{position:fixed;right:22px;bottom:100px;width:min(415px,calc(100vw - 24px));height:min(590px,calc(100dvh - 130px));z-index:91;display:flex;flex-direction:column;border:1px solid rgba(192,164,252,.3);border-radius:24px;background:#101021;color:#f7f4ff;box-shadow:0 26px 85px rgba(0,0,0,.48);overflow:hidden}
+.il-chat-window[hidden],.il-chat-launch[hidden]{display:none!important}
+.il-chat-head{padding:17px 18px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(120deg,#241742,#121325);border-bottom:1px solid #3b2f55}.il-chat-head strong{font-size:1rem}.il-chat-head small{display:block;color:#b8a9d9;margin-top:3px}
+.il-chat-head button{border:0;background:transparent;color:#f4efff;font-size:23px;cursor:pointer;min-width:36px;min-height:36px}
+.il-chat-messages{flex:1;overflow-y:auto;padding:17px;display:flex;flex-direction:column;gap:12px;scrollbar-width:thin}
+.il-chat-bubble{padding:11px 13px;border-radius:15px;line-height:1.5;font-size:.87rem;white-space:pre-wrap;overflow-wrap:anywhere;max-width:94%}
+.il-chat-bubble.user{align-self:flex-end;background:#e4e8e8;color:#111111;border:1px solid #cbd3d3;border-bottom-right-radius:4px}.il-chat-bubble.assistant{align-self:flex-start;background:#24253c;border:1px solid #363650;border-bottom-left-radius:4px}.il-chat-bubble.error{color:#ffd59e}
+.il-chat-foot{border-top:1px solid #383047;padding:12px;background:#171627}.il-chat-compose{display:flex;gap:9px;align-items:end}.il-chat-compose textarea{flex:1;min-height:44px;max-height:115px;resize:vertical;background:#262338;color:white;border:1px solid #4c4266;border-radius:13px;padding:11px;font:inherit;font-size:.85rem}.il-chat-compose button{border:0;border-radius:13px;background:#8057E3;color:white;padding:12px;cursor:pointer;font:inherit;font-weight:700}
+.il-chat-mode{font-size:.72rem;color:#bcaed1;line-height:1.45;padding-bottom:8px}.il-chat-controls{display:flex;justify-content:space-between;gap:8px;padding-top:10px}.il-chat-controls button{font:inherit;font-size:.73rem;color:#c7b8e8;background:transparent;border:0;text-decoration:underline;cursor:pointer}
+body.login-locked .il-chat-launch,body.login-locked .il-chat-window{display:none!important}
+@media(max-width:760px){.il-chat-launch{right:14px;bottom:100px;height:56px;width:56px}.il-chat-window{right:9px;bottom:162px;width:calc(100vw - 18px);height:min(570px,calc(100dvh - 180px));border-radius:19px}}
+
+/* v10.3: preserve line breaks in reviewable proposals */
+.il-chat-action p{white-space:pre-line;overflow-wrap:anywhere}
