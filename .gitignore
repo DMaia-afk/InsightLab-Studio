@@ -1,0 +1,46 @@
+# InsightLab — private local state and credentials (stage 1 safety baseline)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*credentials*.json
+*secret*.json
+backend/.insightlab_admin_token
+backend/.venv/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+*.sqlite
+*.db
+# Ignore personal datasets; keep only verified synthetic fixtures
+*.csv
+!examples/*.csv
+!insightlab_mvp/dados_exemplo.csv
+# Editor settings and local temporary files
+.vscode/
+.idea/
+.tmp/
+*.bak
+
+# Release artifacts, local IDE and tooling
+/dist/
+/build/
+*.zip
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+*.sqlite3
+backend/*.sqlite*
+backend/*.log
+backend/*.json
+*.tmp
+*.bat
+
