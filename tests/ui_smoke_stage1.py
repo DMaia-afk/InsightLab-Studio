@@ -33,6 +33,17 @@ async def main():
             dialogs.append(d.message)
             await d.accept()
         page.on('dialog',handle_dialog)
+        # Logout before login
+        await page.locator('#ilPreferences > summary').click()
+        await page.locator('#logoutBtn').click()
+        await page.locator('#loginOverlay').wait_for(state='visible')
+        assert await page.locator('#loginOverlay').is_visible()
+        assert await page.locator('body').evaluate(
+        "(el) => el.classList.contains('login-locked')"
+        )
+        print('OK: logout == True')
+
+        assert not errors,errors
         await page.set_content(html_inline(),wait_until='domcontentloaded')
         assert await page.locator('#loginOverlay').is_visible()
         await page.click('#loginDemo')
