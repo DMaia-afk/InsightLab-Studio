@@ -7,7 +7,6 @@
 **Your business generates data every day. InsightLab helps you understand what it is telling you.**
 
 *An interactive, local-first analytics workspace that turns CSV files into conversations, editable dashboards, and data-linked stories.*
-
 [![English](https://img.shields.io/badge/%F0%9F%8C%90_English-International-1f6feb?style=for-the-badge)](README.md)
 [![Português](https://img.shields.io/badge/%F0%9F%8C%90_Portugu%C3%AAs-BR-238636?style=for-the-badge)](README.pt-BR.md)
 
@@ -18,6 +17,9 @@
 ![InsightLab Studio — real analytics dashboard with the synthetic barbershop dataset](docs/images/en/dashboard.png)
 
 <sub>Actual InsightLab interface running with the synthetic barbershop sample included in this repository.</sub>
+### User Guide
+
+📖 [Interactive User Guide](https://insightlab-user-guide.vercel.app/)
 
 ### Language selection in the application
 
