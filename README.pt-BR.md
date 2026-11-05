@@ -18,7 +18,8 @@
 ![InsightLab Studio — painel real com a base fictícia da barbearia](docs/images/dashboard.png)
 
 <sub>Captura real da interface do InsightLab utilizando o CSV sintético da barbearia incluído no repositório.</sub>
-
+## Guia de Usuário
+📖 [Guia de Usuário](https://insightlab-user-guide.vercel.app/)
 ## Por que o InsightLab nasceu?
 
 **O InsightLab nasceu de uma necessidade simples: o empreendedor registra muita informação, mas nem sempre consegue enxergar com clareza o que esses registros revelam sobre a situação real do seu negócio.**
